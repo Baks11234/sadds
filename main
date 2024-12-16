@@ -1,0 +1,13 @@
+// server.js
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/addcoins', (req, res) => {
+    const { username, coins } = req.body;
+
+
+    res.json({ success: true, message: `Dodano ${coins} coinów do ${username}.` });
+});
+
+app.listen(3000, () => console.log('API działa na porcie 3000'));
